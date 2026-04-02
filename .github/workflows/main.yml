@@ -79,9 +79,9 @@ jobs:
               current_env['SKYBOTS_PASSWORD'] = pwd
 
               # 执行命令：为每个账号开启独立的 xvfb 虚拟屏幕
-              # 注意：脚本名必须与仓库中的文件名一致，此处假设为 skybots.py
+              # 注意：脚本名必须与仓库中的文件名一致
               try:
-                  subprocess.run(['xvfb-run', '-a', 'python3', 'skybots.py'], env=current_env)
+                  subprocess.run(['xvfb-run', '-a', 'python3', 'main.py'], env=current_env)
               except Exception as e:
                   print(f'❌ 账号 {user} 执行异常: {e}')
 
